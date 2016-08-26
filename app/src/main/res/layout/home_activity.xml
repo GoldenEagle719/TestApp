@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent" android:layout_width="fill_parent"
+	android:orientation="vertical">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+			<LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="3.5">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imgView_logo"
+                        android:src="@drawable/large_logo" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/imgView_message"
+                        android:src="@drawable/mail"
+                        android:layout_gravity="top|right"
+                        android:layout_margin="10dp"
+                        android:onClick="imgView_messageClicked" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+			<LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3.8">
+
+
+                <FrameLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:id="@+id/btn_search"
+                        android:src="@drawable/search"
+                        android:scaleType="fitStart"
+                        android:background="@color/colorPrimaryEmpty"
+                        android:onClick="btn_searchClicked" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/txtView_latLong"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:textSize="14dp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8.5">
+
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/btn_pin"
+                        android:src="@drawable/pin"
+                        android:background="@color/colorPrimaryEmpty"
+                        android:scaleType="fitCenter"
+                        android:onClick="btn_pinClicked" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+			<LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true" />
+            </LinearLayout>
+		</LinearLayout>
+
+		<FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+			android:id="@+id/home_fragment_container"
+            android:background="@color/colorPrimaryWhite"></FrameLayout>
+	</FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius">8dp</dimen> 
+    <dimen name="corner_radius_zero">0dp</dimen> 
+    <dimen name="tab_space_top">4dp</dimen>
+    <dimen name="tab_space">0dp</dimen>
+    <dimen name="tab_space_plus1">3dp</dimen>
+    <dimen name="tab_space_bottom_line">36sp</dimen>
+    <dimen name="tab_space_unselected_top">6sp</dimen>
+
+    <dimen name="ssmall_textsize">14dp</dimen>
+    <dimen name="small_textsize">16dp</dimen>
+    <dimen name="smiddle_textsize">18dp</dimen>
+    <dimen name="middle_textsize">20dp</dimen>
+    <dimen name="large_textsize">24dp</dimen>
+</resources>  

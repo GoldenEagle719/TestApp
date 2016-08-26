@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.anton.testapp.fragments.NotificationsFragment"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="&lt; Profile"
+            android:id="@+id/notificationf_btn_back"
+            android:textColor="@color/colorPrimaryRed"
+            android:layout_margin="10dp"
+            android:textSize="@dimen/smiddle_textsize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Notifications"
+            android:id="@+id/notificationf_textview1"
+            android:textColor="@color/colorPrimaryBlack"
+            android:layout_margin="10dp"
+            android:textSize="@dimen/middle_textsize"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Send me messages about:"
+        android:id="@+id/notificationf_textview2"
+        android:textColor="@color/colorPrimaryBlack"
+        android:textSize="@dimen/small_textsize"
+        android:layout_marginBottom="15dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notificationf_listview" />
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:background="@drawable/marker_background"
+    android:id="@+id/custom_marker_view">
+
+    <ImageView
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:id="@+id/marker_image"
+        android:layout_gravity="center_horizontal|top"
+        android:src="@drawable/anchor"
+        android:scaleType="fitXY"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="30dp" />
+
+</FrameLayout>
