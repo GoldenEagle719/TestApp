@@ -11,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.android.anton.testapp.classes.UserInfo;
+
 
 public class MainActivity extends TabActivity {
+    private static final String TAG = "MainActivity";
     public static TabHost tabHost;
     /** Called when the activity is first created. */
 
@@ -20,11 +23,10 @@ public class MainActivity extends TabActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences pref;
-        pref = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
-        String name = pref.getString("name", "");
-        String email = pref.getString("email", "");
-        String telephone = pref.getString("telephone", "");
+        UserInfo userInfo = new UserInfo(this);
+        String name = userInfo.getName();
+        String email = userInfo.getEmail();
+        String telephone = userInfo.getTelephone();
 
         if (name.equals("") || email.equals("") || telephone.equals("")) {
             Intent intent = new Intent(this, RegistrationActivity.class);
@@ -64,14 +66,6 @@ public class MainActivity extends TabActivity {
         if (tabHost == null)
             return;
         tabHost.setCurrentTab(i);
-    }
-
-    public void clearTempSearchedLocation() {
-        SharedPreferences.Editor editor = getSharedPreferences("SelectedLocation", MODE_PRIVATE).edit();
-        editor.putString("Name", "");
-        editor.putString("Lat", "");
-        editor.putString("Long", "");
-        editor.commit();
     }
 
 }

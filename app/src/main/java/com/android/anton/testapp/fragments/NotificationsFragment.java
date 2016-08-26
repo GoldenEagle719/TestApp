@@ -39,6 +39,9 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
                              Bundle savedInstanceState) {
         mContainer = container;
 
+        View view = inflater.inflate(R.layout.notifications_fragment, null, true);
+
+        /* ListView--------------------------------------------------------------------------------------------------------------*/
         final String[] itemTextAry = new String[] {"asian", "banting", "breakfast", "burgers", "child friendly", "cookery classes",
                 "coffee", "desert", "drinks", "indian", "italian", "luxury dining", "meat lover", "mexican", "nightlife", "pet friendly",
                 "recipes", "seafood", "streetfood", "sushi", "vegetarian", "vegan"};
@@ -49,7 +52,6 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
                     .getInt("NC" + String.valueOf(i), 0);
         }
 
-        View view = inflater.inflate(R.layout.notifications_fragment, null, true);
         notifications_config_listView = (ListView)view.findViewById(R.id.notificationf_listview);
         notifications_config_listView.setAdapter(new NotificationConfigListAdapter(getActivity(), itemTextAry, switchValueAry));
         notifications_config_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -63,6 +65,7 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
             }
         });
 
+        /* Button*/
         TextView notificationf_btn_back = (TextView)view.findViewById(R.id.notificationf_btn_back);
         notificationf_btn_back.setOnClickListener(this);
 

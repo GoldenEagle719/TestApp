@@ -246,6 +246,6 @@ public class SearchActivity extends Activity {
 //            ((ImageButton)(v)).setImageResource(R.mipmap.search_normal);
 //        }
 //
-//    }s
+//    }
 
 }

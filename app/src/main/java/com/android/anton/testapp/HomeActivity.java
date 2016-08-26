@@ -16,7 +16,6 @@ import com.android.anton.testapp.classes.CustomAdapter;
 import com.android.anton.testapp.classes.GPSTracker;
 import com.android.anton.testapp.fragments.FeedbackFragment;
 
-///Github
 public class HomeActivity extends Activity {
 
     private ListView    listView;
@@ -46,12 +45,9 @@ public class HomeActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /* ItemClickListener */
-//                Toast toast = Toast.makeText(HomeActivity.this, itemTextAry[position], Toast.LENGTH_LONG);
-//                toast.show();
                 FeedbackFragment fragment = new FeedbackFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("param1", itemTextAry[position]);
+                bundle.putString("param1", itemTextAry[position]); // Send Param to Fragment
                 fragment.setArguments(bundle);
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();

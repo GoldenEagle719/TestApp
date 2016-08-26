@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.android.anton.testapp.MainActivity;
 import com.android.anton.testapp.R;
 import com.android.anton.testapp.classes.NotificationConfigListAdapter;
+import com.android.anton.testapp.classes.UserInfo;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
@@ -41,7 +42,7 @@ public class FeedbackFragment extends Fragment implements View.OnClickListener{
     private static final String TAG = "FeedbackF";
 
     private OnFragmentInteractionListener mListener;
-    private ViewGroup mContainer;
+    private ViewGroup   mContainer;
     private EditText    feedbackf_edittext_name;
     private EditText    feedbackf_edittext_email;
     private EditText    feedbackf_edittext_phone;
@@ -84,10 +85,12 @@ public class FeedbackFragment extends Fragment implements View.OnClickListener{
         feedbackf_edittext_phone = (EditText)view.findViewById(R.id.feedbackf_edittext_phone);
         feedbackf_edittext_comments = (EditText)view.findViewById(R.id.feedbackf_edittext_comments);
         feedbackf_ratingBar = (RatingBar)view.findViewById(R.id.feedbackf_ratingBar);
-        SharedPreferences pref = getActivity().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
-        feedbackf_edittext_name.setText(pref.getString("name", ""));
-        feedbackf_edittext_email.setText(pref.getString("email", ""));
-        feedbackf_edittext_phone.setText(pref.getString("telephone", ""));
+
+        UserInfo userInfo = new UserInfo(getActivity());
+
+        feedbackf_edittext_name.setText(userInfo.getName());
+        feedbackf_edittext_email.setText(userInfo.getEmail());
+        feedbackf_edittext_phone.setText(userInfo.getTelephone());
 
         return view;
     }
@@ -213,8 +216,16 @@ public class FeedbackFragment extends Fragment implements View.OnClickListener{
                 public void onFailure(Request request, IOException e) {
                     Log.d(TAG + "MyFailure", request.toString());
 
-//                    mContainer.setVisibility(View.GONE);
-//                    getActivity().getFragmentManager().beginTransaction().remove(FeedbackFragment.this).commit();
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mContainer.setVisibility(View.GONE);
+                            getActivity().getFragmentManager().beginTransaction().remove(FeedbackFragment.this).commit();
+
+                            Toast toast = Toast.makeText(getActivity(), "Failed", Toast.LENGTH_LONG);
+                            toast.show();
+                        }
+                    });
                 }
 
                 @Override

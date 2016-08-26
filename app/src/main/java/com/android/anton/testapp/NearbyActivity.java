@@ -284,7 +284,6 @@ public class NearbyActivity extends Activity implements GoogleMap.OnMarkerClickL
                     map.clear();
                     map.setOnMarkerClickListener(NearbyActivity.this);
                     map.moveCamera(CameraUpdateFactory.newLatLngZoom(getSelectedLatLng(), 10));
-//                    map.animateCamera(CameraUpdateFactory.zoomTo(calculateZoomLevel()), 2000, null);
 
                     showLocations();
 

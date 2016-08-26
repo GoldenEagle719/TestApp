@@ -133,21 +133,14 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
             if (error_flag)
                 return;
 
-            UserInfo userInfo = new UserInfo(name, email, telephone);
+            UserInfo userInfo = new UserInfo(getActivity());
+            userInfo.setName(name);
+            userInfo.setEmail(email);
+            userInfo.setTelephone(telephone);
             userInfo.setAddress1(address1);
             userInfo.setAddress2(address2);
             userInfo.setTown(town);
             userInfo.setPostcode(postcode);
-
-            SharedPreferences.Editor editor = getActivity().getSharedPreferences("UserInfo", Context.MODE_PRIVATE).edit();
-            editor.putString("name", name);
-            editor.putString("email", email);
-            editor.putString("address1", address1);
-            editor.putString("address2", address2);
-            editor.putString("town", town);
-            editor.putString("postcode", postcode);
-            editor.putString("telephone", telephone);
-            editor.commit();
 
             Toast toast = Toast.makeText(getActivity(), "Saved successfully", Toast.LENGTH_LONG);
             toast.show();
@@ -179,7 +172,7 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
 
     private boolean isValidMobile(String phone)
     {
-        return PhoneNumberUtils.isGlobalPhoneNumber(phone);
+        return android.util.Patterns.PHONE.matcher(phone).matches();
     }
 
     public void onButtonPressed(Uri uri) {

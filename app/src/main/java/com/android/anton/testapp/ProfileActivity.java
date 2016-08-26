@@ -15,17 +15,15 @@ public class ProfileActivity extends Activity {
     private static final String TAG = "ProfileActivity";
 
     private LinearLayout profile_component_container;
-    private FrameLayout profile_fragment_container;
+    private FrameLayout fragment_container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
 
-        profile_component_container = (LinearLayout)findViewById(R.id.profile_component_container);
-        profile_component_container.setVisibility(View.VISIBLE);
-        profile_fragment_container = (FrameLayout)findViewById(R.id.profile_fragment_container);
-        profile_fragment_container.setVisibility(View.GONE);
+        fragment_container = (FrameLayout)findViewById(R.id.profile_fragment_container);
+        fragment_container.setVisibility(View.GONE);
     }
 
     public void profile_btn_registrationClicked(View v) {
@@ -33,7 +31,7 @@ public class ProfileActivity extends Activity {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.add(R.id.profile_fragment_container, fragment).commit();
 
-        profile_fragment_container.setVisibility(View.VISIBLE);
+        fragment_container.setVisibility(View.VISIBLE);
     }
 
     public void profile_btn_notificationClicked(View v) {
@@ -41,6 +39,6 @@ public class ProfileActivity extends Activity {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.add(R.id.profile_fragment_container, fragment).commit();
 
-        profile_fragment_container.setVisibility(View.VISIBLE);
+        fragment_container.setVisibility(View.VISIBLE);
     }
 }
