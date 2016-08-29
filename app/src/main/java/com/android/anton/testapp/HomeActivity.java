@@ -47,7 +47,8 @@ public class HomeActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 FeedbackFragment fragment = new FeedbackFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("param1", itemTextAry[position]); // Send Param to Fragment
+                bundle.putString("lat", itemTextAry[position]); // Send Param to Fragment
+                bundle.putString("lng", itemTextAry[position]);
                 fragment.setArguments(bundle);
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();

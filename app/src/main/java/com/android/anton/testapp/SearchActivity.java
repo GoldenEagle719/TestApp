@@ -94,7 +94,6 @@ public class SearchActivity extends Activity {
                 String actionName = "searchlocations";
                 String instanceid = "E658D06413D94F1EAF243D171BA4A26E";
                 String searchText = s.toString();
-                String boundaryString = "----------------Boundary------------------";
 
                 OkHttpClient client = new OkHttpClient();
 

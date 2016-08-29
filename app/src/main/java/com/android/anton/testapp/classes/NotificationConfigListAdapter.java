@@ -107,7 +107,6 @@ public class NotificationConfigListAdapter extends ArrayAdapter<String>{
 
                 }
 
-
                 SharedPreferences.Editor editor = mContext.getSharedPreferences("NotificationConfig", Context.MODE_PRIVATE).edit();
                 editor.putInt("NC" + String.valueOf(position), ((isChecked == true)?1:0));
                 editor.putString("NCID" + String.valueOf(position), ids[position]);
