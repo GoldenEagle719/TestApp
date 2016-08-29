@@ -1,7 +1,9 @@
 package com.android.anton.testapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,7 +16,11 @@ import android.widget.Toast;
 
 import com.android.anton.testapp.classes.CustomAdapter;
 import com.android.anton.testapp.classes.GPSTracker;
+import com.android.anton.testapp.classes.MySharedPreference;
+import com.android.anton.testapp.classes.Restaurant;
 import com.android.anton.testapp.fragments.FeedbackFragment;
+import com.android.anton.testapp.fragments.RestaurantDetailFragment;
+import com.android.anton.testapp.fragments.RestaurantsFragment;
 
 public class HomeActivity extends Activity {
 
@@ -23,13 +29,16 @@ public class HomeActivity extends Activity {
 
     private TextView    txtView_latLong;
     private int         SEARCH_REQUEST = 1;
+    public String[] itemTextAry;
+
+    RestaurantsFragment restaurantsFragment;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
 
         /* ListView------------------------------------------------------------------------------------*/
-        final String[] itemTextAry = new String[] {"asian", "banting", "breakfast", "burgers", "child friendly", "cookery classes",
+        itemTextAry = new String[] {"asian", "banting", "breakfast", "burgers", "child friendly", "cookery classes",
             "coffee", "desert", "drinks", "indian", "italian", "luxury dining", "meat lover", "mexican", "nightlife", "pet friendly",
             "recipes", "seafood", "streetfood", "sushi", "vegetarian", "vegan"};
 
@@ -45,16 +54,22 @@ public class HomeActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FeedbackFragment fragment = new FeedbackFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("lat", itemTextAry[position]); // Send Param to Fragment
-                bundle.putString("lng", itemTextAry[position]);
-                fragment.setArguments(bundle);
 
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.home_fragment_container,fragment).commit();
+                if (MySharedPreference.newInstance(getActivity()).getSelectedLocation() == null) {
+                    new AlertDialog.Builder(getActivity())
+                            .setTitle("")
+                            .setMessage("Please choose a location first!")
+                            .setCancelable(false)
+                            .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    return;
+                                }
+                            }).create().show();
 
-                fragment_container.setVisibility(View.VISIBLE);
+                } else {
+                    showRestaurantsFragment(position);
+                }
 
             }
         });
@@ -66,6 +81,18 @@ public class HomeActivity extends Activity {
         /* FragmentContainer---------------------------------------------------------------------------*/
         fragment_container = (FrameLayout)findViewById(R.id.home_fragment_container);
         fragment_container.setVisibility(View.GONE);
+    }
+
+    public void showRestaurantsFragment(int position) {
+        RestaurantsFragment restaurantsFragment = new RestaurantsFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("category", itemTextAry[position]); // Send Param to Fragment
+        restaurantsFragment.setArguments(bundle);
+
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.home_fragment_container,restaurantsFragment).commit();
+
+        fragment_container.setVisibility(View.VISIBLE);
     }
 
     public String getLocationInfo() {
@@ -98,6 +125,10 @@ public class HomeActivity extends Activity {
     public void imgView_messageClicked(View v) {
         Intent intent = new Intent(this, MessageActivity.class);
         startActivity(intent);
+    }
+
+    public Activity getActivity() {
+        return  this;
     }
 
     @Override

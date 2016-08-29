@@ -39,7 +39,7 @@
             android:id="@+id/restaurants_list_item_ratingbar"
             android:layout_marginTop="12dp"
             android:rating="4"
-            android:progressTint="#f1d964"
+            android:progressTint="#f8e89c"
             android:progressBackgroundTint="#8a8989" />
     </LinearLayout>
 

@@ -49,8 +49,6 @@ public class FeedbackFragment extends Fragment implements View.OnClickListener{
     private EditText    feedbackf_edittext_comments;
     private RatingBar   feedbackf_ratingBar;
 
-    private String param1;
-
     public FeedbackFragment() {
 
     }
@@ -69,8 +67,6 @@ public class FeedbackFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mContainer = container;
-
-        param1 = getArguments().getString("param1");
 
         View view = inflater.inflate(R.layout.feedback_fragment, null, true);
         view.setOnClickListener(this);

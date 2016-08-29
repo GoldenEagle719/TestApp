@@ -6,11 +6,11 @@ package com.android.anton.testapp.classes;
 public class Restaurant {
 
     private String name;
-    private double distance;
+    private String distance;
     private float rating;
     private String img_url;
 
-    public Restaurant(String name, double distance, float rating, String img_url) {
+    public Restaurant(String name, String distance, float rating, String img_url) {
         this.name = name;
         this.distance = distance;
         this.rating = rating;
@@ -21,7 +21,7 @@ public class Restaurant {
         return this.name;
     }
 
-    public double getDistance() {
+    public String getDistance() {
         return this.distance;
     }
 
@@ -37,7 +37,7 @@ public class Restaurant {
         this.name = name;
     }
 
-    public void setDistance(double distance) {
+    public void setDistance(String distance) {
         this.distance = distance;
     }
 
