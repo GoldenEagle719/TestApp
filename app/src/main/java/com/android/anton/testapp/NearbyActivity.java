@@ -189,7 +189,6 @@ public class NearbyActivity extends Activity implements GoogleMap.OnMarkerClickL
 
                 markerList.add(marker);
 
-
                 bitmapList.add(image);
             }
 
