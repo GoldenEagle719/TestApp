@@ -19,18 +19,20 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Detail text"
                 android:id="@+id/marker_detail_text"
                 android:textColor="@color/colorPrimaryBlack"
                 android:textSize="@dimen/ssmall_textsize"
-                android:maxLength="17" />
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:maxLines="1" />
 
             <TextView
                 android:layout_width="wrap_content"

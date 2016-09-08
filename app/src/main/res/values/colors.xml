@@ -13,4 +13,7 @@
     <color name="colorPrimaryBlack">#000000</color>
     <color name="colorPrimaryBlue">#668ddf</color>
     <color name ="colorPrimaryWhite">#FFFFFFFF</color>
+
+    <!--TabColor-->
+    <color name="colorTabSelected">#FF36EAED</color>
 </resources>

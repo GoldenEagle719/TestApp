@@ -1,0 +1,227 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.anton.testapp.fragments.NotificationsFragment"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Done"
+            android:id="@+id/fragment_restaurantdetail_btn_back"
+            android:textSize="@dimen/smiddle_textsize"
+            android:textColor="@color/colorPrimaryRed"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Restaurant Detail"
+            android:id="@+id/fragment_restaurantdetail_textview_title"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryBlack"
+            android:textSize="@dimen/smiddle_textsize" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/fragment_restaurant_detail_imageview_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/fragment_restaurant_detail_textview_name"
+                android:textColor="@color/colorPrimaryBlack"
+                android:layout_marginTop="10dp" />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_restaurant_detail_ratingbar"
+                style="@android:style/Widget.Holo.Light.RatingBar.Small"
+                android:layout_marginTop="10dp"
+                android:progressTint="#f3e068" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/fragment_restaurant_detail_textview_distance"
+                android:textColor="@color/colorPrimaryBlack" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="View Menu"
+                android:layout_weight="10"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/middle_textsize"
+                android:id="@+id/fragment_restaurant_detail_textview1"
+                android:layout_marginBottom="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_restaurant_detail_btn_viewmenu"
+                android:src="@mipmap/menu"
+                android:layout_weight="2"
+                android:layout_marginBottom="10dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Show Specials"
+                android:layout_weight="10"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/middle_textsize"
+                android:id="@+id/fragment_restaurant_detail_textview2"
+                android:layout_marginBottom="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/special"
+                android:layout_weight="2"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/fragment_restaurant_detail_btn_showspecials" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Restaurant Info"
+                android:layout_weight="10"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/middle_textsize"
+                android:id="@+id/fragment_restaurant_detail_textview3"
+                android:layout_marginBottom="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_restaurant_detail_btn_restaurantinfo"
+                android:src="@mipmap/info"
+                android:layout_weight="2"
+                android:layout_marginBottom="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Rate Restaurant"
+                android:layout_weight="10"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/middle_textsize"
+                android:id="@+id/fragment_restaurant_detail_textview4"
+                android:layout_marginBottom="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_restaurant_detail_raterestaurant"
+                android:src="@mipmap/rate"
+                android:layout_weight="2"
+                android:layout_marginBottom="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Book a table"
+                android:layout_weight="10"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/middle_textsize"
+                android:id="@+id/fragment_restaurant_detail_textview5"
+                android:layout_marginBottom="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_restaurant_detail_booktable"
+                android:src="@mipmap/calendar"
+                android:layout_weight="2"
+                android:layout_marginBottom="10dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

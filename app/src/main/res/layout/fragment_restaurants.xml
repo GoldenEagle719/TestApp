@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.anton.testapp.fragments.NotificationsFragment"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="&lt; Home"
+            android:id="@+id/fragment_restaurants_btn_back"
+            android:textSize="@dimen/smiddle_textsize"
+            android:textColor="@color/colorPrimaryRed"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Results"
+            android:id="@+id/fragment_restaurants_textview_title"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryBlack"
+            android:textSize="@dimen/smiddle_textsize" />
+    </FrameLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragments_restaurants_listview"
+        android:layout_marginTop="20dp" />
+</LinearLayout>
