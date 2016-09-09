@@ -4,11 +4,11 @@
 	<item android:left="@dimen/tab_space" android:right="@dimen/tab_space">
 		<shape android:shape="rectangle">
 
-			<solid android:color="@color/tabDark"/>
+			<solid android:color="@color/tabMedium"/>
 		</shape>
 	</item>
 
-	<item android:left="2sp" android:top="50sp" android:right="2sp"
+	<item android:left="2sp" android:top="53sp" android:right="2sp"
 		android:bottom="2sp">
 		<shape android:shape="rectangle">
 
