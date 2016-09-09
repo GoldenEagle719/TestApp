@@ -40,11 +40,11 @@ public class MainActivity extends TabActivity {
 
     private void setTabs()
     {
-        addTab("Home", R.drawable.tab_home, HomeActivity.class);
-        addTab("Nearby", R.drawable.tab_search, NearbyActivity.class);
-        addTab("Profile", R.drawable.tab_profile, ProfileActivity.class);
-        addTab("Prizes", R.drawable.tab_prizes, PrizesActivity.class);
-        addTab("Share", R.drawable.tab_share, ShareActivity.class);
+        addTab("Home", R.mipmap.home, HomeActivity.class);
+        addTab("Nearby", R.mipmap.nearby, NearbyActivity.class);
+        addTab("Profile", R.mipmap.profile, ProfileActivity.class);
+        addTab("Prizes", R.mipmap.prizes, PrizesActivity.class);
+        addTab("Share", R.mipmap.share, ShareActivity.class);
     }
 
     private void addTab(String labelId, int drawableId, Class<?> c)
