@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.android.anton.testapp.HomeActivity;
 import com.android.anton.testapp.MainActivity;
 import com.android.anton.testapp.R;
 import com.android.anton.testapp.RegistrationActivity;
+import com.android.anton.testapp.SubActivities.RestaurantDetailActivity;
 import com.android.anton.testapp.classes.MySharedPreference;
 import com.android.anton.testapp.classes.NotificationConfigListAdapter;
 import com.android.anton.testapp.classes.Restaurant;
@@ -105,20 +107,28 @@ public class RestaurantsFragment extends Fragment implements View.OnClickListene
     }
 
     public void fragment_restaurants_listview_itemClicked(int position) {
-        RestaurantDetailFragment restaurantDetailFragment = new RestaurantDetailFragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("name", restaurantArrayList.get(position).getName());
-        bundle.putString("distance", restaurantArrayList.get(position).getDistance());
-        bundle.putString("imageurl", restaurantArrayList.get(position).getImgURL());
-        bundle.putFloat("rating", restaurantArrayList.get(position).getRating());
-        bundle.putString("category", category);
+//        RestaurantDetailFragment restaurantDetailFragment = new RestaurantDetailFragment();
+//        Bundle bundle = new Bundle();
+//        bundle.putString("name", restaurantArrayList.get(position).getName());
+//        bundle.putString("distance", restaurantArrayList.get(position).getDistance());
+//        bundle.putString("imageurl", restaurantArrayList.get(position).getImgURL());
+//        bundle.putFloat("rating", restaurantArrayList.get(position).getRating());
+//        bundle.putString("category", category);
+//
+//        restaurantDetailFragment.setArguments(bundle);
+//
+//        this.getFragmentManager().beginTransaction()
+//                .replace(R.id.home_fragment_container, restaurantDetailFragment, null)
+//                .addToBackStack(null)
+//                .commit();
+        Intent intent = new Intent(this.getActivity(), RestaurantDetailActivity.class);
+        intent.putExtra("name", restaurantArrayList.get(position).getName());
+        intent.putExtra("distance", restaurantArrayList.get(position).getDistance());
+        intent.putExtra("imageurl", restaurantArrayList.get(position).getImgURL());
+        intent.putExtra("rating", restaurantArrayList.get(position).getRating());
+        intent.putExtra("category", category);
+        getActivity().startActivity(intent);
 
-        restaurantDetailFragment.setArguments(bundle);
-
-        this.getFragmentManager().beginTransaction()
-                .replace(R.id.home_fragment_container, restaurantDetailFragment, null)
-                .addToBackStack(null)
-                .commit();
     }
 
     public void searchVenues() {

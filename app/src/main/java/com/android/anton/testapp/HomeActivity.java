@@ -12,14 +12,10 @@ import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.anton.testapp.classes.CustomAdapter;
 import com.android.anton.testapp.classes.GPSTracker;
 import com.android.anton.testapp.classes.MySharedPreference;
-import com.android.anton.testapp.classes.Restaurant;
-import com.android.anton.testapp.fragments.FeedbackFragment;
-import com.android.anton.testapp.fragments.RestaurantDetailFragment;
 import com.android.anton.testapp.fragments.RestaurantsFragment;
 
 public class HomeActivity extends Activity {
