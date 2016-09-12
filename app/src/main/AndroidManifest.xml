@@ -28,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".RegistrationActivity"
             android:screenOrientation="portrait" />
@@ -44,7 +43,11 @@
         <activity android:name=".ShareActivity" />
         <activity android:name=".MessageActivity" />
 
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDURjeFcUGk1gfAYkV7wo3PfL7DrZeUAW4"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDURjeFcUGk1gfAYkV7wo3PfL7DrZeUAW4" />
+
+        <activity android:name=".SubActivities.RestaurantDetailActivity"></activity>
     </application>
 
 </manifest>
