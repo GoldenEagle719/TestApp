@@ -1,5 +1,6 @@
 package com.android.anton.testapp.SubActivities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -52,6 +53,11 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 
     public void activity_restaurantdetail_btn_back_clicked(View v) {
         finish();
+    }
+
+    public void activity_restaurant_detail_btn_bookable_clicked(View v) {
+        Intent intent = new Intent(this, RestaurantRequestActivity.class);
+        startActivity(intent);
     }
 
 }

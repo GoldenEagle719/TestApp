@@ -47,7 +47,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDURjeFcUGk1gfAYkV7wo3PfL7DrZeUAW4" />
 
-        <activity android:name=".SubActivities.RestaurantDetailActivity"></activity>
+        <activity android:name=".SubActivities.RestaurantDetailActivity" />
+        <activity android:name=".SubActivities.RestaurantRequestActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
