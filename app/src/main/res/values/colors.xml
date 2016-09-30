@@ -12,7 +12,9 @@
     <color name="colorPrimaryEmpty">#00000000</color>
     <color name="colorPrimaryBlack">#000000</color>
     <color name="colorPrimaryBlue">#668ddf</color>
-    <color name ="colorPrimaryWhite">#FFFFFFFF</color>
+    <color name="colorPrimaryWhite">#FFFFFFFF</color>
+    <color name="colorPrimaryGrey">#FF999999</color>
+    <color name="colorBlackAlpha">#22000000</color>
 
     <!--TabColor-->
     <color name="colorTabSelected">#FF36EAED</color>

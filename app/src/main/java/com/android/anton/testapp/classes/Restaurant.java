@@ -5,16 +5,26 @@ package com.android.anton.testapp.classes;
  */
 public class Restaurant {
 
+    private String appId;
     private String name;
     private String distance;
     private float rating;
     private String img_url;
 
-    public Restaurant(String name, String distance, float rating, String img_url) {
+    public Restaurant(String appId, String name, String distance, float rating, String img_url) {
+        this.appId = appId;
         this.name = name;
         this.distance = distance;
         this.rating = rating;
         this.img_url = img_url;
+    }
+
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
 
     public String getName() {

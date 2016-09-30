@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubActivities.RestMenuDetailActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/back"
+            android:id="@+id/activity_rest_menu_detail_btn_back"
+            android:textColor="@color/colorPrimaryRed"
+            android:layout_margin="10dp"
+            android:layout_gravity="left|center_vertical"
+            android:onClick="onBack"
+            android:textSize="@dimen/smiddle_textsize" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimaryGrey"></LinearLayout>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView7"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Sesame Udon Noodles"
+                android:id="@+id/activity_rest_menu_detail_title"
+                android:textColor="@color/colorPrimaryBlack"
+                android:textSize="@dimen/smiddle_textsize" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Eggs fried noodles with healthy vegetables"
+                android:id="@+id/activity_rest_menu_detail_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimaryBlack"
+                android:textSize="@dimen/small_textsize" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_rest_menu_detail_image"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/asian"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Price: R85.00"
+                android:id="@+id/activity_rest_menu_detail_price"
+                android:textColor="@color/colorPrimaryBlack"
+                android:textSize="@dimen/small_textsize"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Options"
+                android:id="@+id/activity_rest_menu_detail_options"
+                android:textColor="@color/colorPrimaryBlack"
+                android:textSize="@dimen/smiddle_textsize"
+                android:background="@color/colorBlackAlpha"
+                android:textAlignment="center"
+                android:layout_marginBottom="10dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/activity_rest_menu_detail_listview" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

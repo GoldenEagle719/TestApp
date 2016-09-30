@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -48,8 +49,24 @@
             android:value="AIzaSyDURjeFcUGk1gfAYkV7wo3PfL7DrZeUAW4" />
 
         <activity android:name=".SubActivities.RestaurantDetailActivity" />
-        <activity android:name=".SubActivities.RestaurantRequestActivity"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar"></activity>
+        <activity
+            android:name=".SubActivities.RestaurantRequestActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
+        <activity android:name=".SubActivities.RestaurantInfoActivity" />
+        <activity android:name=".SubActivities.RestInfoLocationActivity" />
+        <activity android:name=".SubActivities.RestInfoWebActivity" />
+        <activity android:name=".SubActivities.RestInfoFacebookActivity" />
+        <activity android:name=".SubActivities.RestInfoTwitterActivity" />
+        <activity android:name=".SubActivities.RestMenuActivity" />
+        <activity android:name=".SubActivities.RestSubMenuActivity" />
+        <activity android:name=".SubActivities.RestMenuDetailActivity" />
+
+        <service
+            android:name=".services.GeocodeAddressIntentService"
+            android:exported="false" />
+
+        <activity android:name=".SubActivities.RestaurantSpecialsActivity" />
+        <activity android:name=".SubActivities.RestaurantRateActivity"></activity>
     </application>
 
 </manifest>

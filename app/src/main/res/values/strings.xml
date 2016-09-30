@@ -1,6 +1,36 @@
 <resources>
     <string name="app_name">testApp</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Global-->
+    <string name="app_info">App Information</string>
+    <string name="back">&lt;Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="app_data">App Data</string>
+    <string name="app_rev">Rev: 21 Date:8/26/2016</string>
+
+    <!--RestMenuDetailActivity & RestSubMenuDetailActivity-->
+    <string name="rest_menu_detail_title">Main Menu</string>
+    <string name="rest_sub_menu_detail_title">Noodle Dishes</string>
+
+    <!--RestaurantInfoActivity-->
+    <string name="restaurantInfo_title">Information</string>
+    <string name="restaurantInfo_test_location">1 Lower Long Street, Cape Town, western cape, 8000</string>
+    <string name="restaurantInfo_test_phone">0215874123</string>
+    <string name="restaurantInfo_test_email">info@samarainoodles.co.za</string>
+    <string name="restaurantInfo_test_facebook">facebook.com/samarainoodles</string>
+    <string name="restaurantInfo_test_twitter">twitter@samarainoodles</string>
+    <string name="restaurantInfo_open_hours">Opening Hours</string>
+    <string name="restaurantInfo_test_open_hours1">04:30 - 19:30</string>
+    <string name="restaurantInfo_test_open_hours2">04:30 - 19:30</string>
+    <string name="restaurantInfo_test_open_hours3">04:30 - 19:30</string>
+    <string name="restaurantInfo_test_open_hours4">04:30 - 19:30</string>
+    <string name="restaurantInfo_test_open_hours5">04:30 - 19:30</string>
+    <string name="restaurantInfo_test_open_hours6">03:30 - 21:30</string>
+    <string name="restaurantInfo_test_open_hours7">03:30 - 21:30</string>
+
+    <!--RestInfoLocationActivity-->
+    <string name="rest_info_location_back">&lt;Information</string>
+    <string name="rest_info_location_title">Find Us</string>
+
 </resources>

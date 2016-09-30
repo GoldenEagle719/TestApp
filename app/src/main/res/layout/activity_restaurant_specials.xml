@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.anton.testapp.SubActivities.RestaurantSpecialsActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="&lt; Back"
+            android:id="@+id/activity_restaurant_specials_btn_back"
+            android:textColor="@color/colorPrimaryRed"
+            android:layout_margin="10dp"
+            android:textSize="@dimen/smiddle_textsize"
+            android:onClick="onBack" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Feedback"
+            android:id="@+id/activity_restaurant_specials_label_title"
+            android:textColor="@color/colorPrimaryBlack"
+            android:layout_margin="10dp"
+            android:textSize="@dimen/middle_textsize"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimaryGrey"></LinearLayout>
+
+    </FrameLayout>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/activity_restaurant_specials_webview" />
+
+</LinearLayout>

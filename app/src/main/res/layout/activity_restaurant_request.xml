@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.anton.testapp.SubActivities.RestaurantRequestActivity"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryWhite">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView5" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryWhite">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="&lt;Back"
+                        android:id="@+id/activity_restaurantrequest_btn_back"
+                        android:textSize="@dimen/smiddle_textsize"
+                        android:textColor="@color/colorPrimaryRed"
+                        android:layout_marginLeft="10dp"
+                        android:onClick="activity_restaurantrequest_btn_back_clicked" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Request"
+                        android:id="@+id/activity_restaurantrequest_textview_title"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/colorPrimaryBlack"
+                        android:textSize="@dimen/smiddle_textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Send"
+                        android:id="@+id/activity_restaurantrequest_btn_send"
+                        android:textSize="@dimen/smiddle_textsize"
+                        android:textColor="@color/colorPrimaryRed"
+                        android:onClick="activity_restaurantrequest_btn_send_clicked"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Please complete the fields below to proceed with your request"
+                        android:id="@+id/textView9"
+                        android:textSize="@dimen/ssmall_textsize" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="100dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Your Details"
+                            android:id="@+id/textView14s"
+                            android:textSize="@dimen/smiddle_textsize"
+                            android:textColor="@color/colorPrimaryBlack" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Edit"
+                            android:id="@+id/activity_restaurantrequest_btn_profileedit"
+                            android:textSize="@dimen/smiddle_textsize"
+                            android:textColor="@color/colorPrimaryRed"
+                            android:onClick="activity_restaurantrequest_btn_profileedit_clicked" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:id="@+id/activity_restaurantrequest_btn_date"
+                    android:onClick="activity_restaurantrequest_btn_date_clicked"
+                    android:nestedScrollingEnabled="false">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Date"
+                        android:id="@+id/activity_restaurantrequest_label_date"
+                        android:textColor="@color/colorPrimaryBlack" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:id="@+id/activity_restaurantrequest_btn_time"
+                    android:onClick="activity_restaurantrequest_btn_time_clicked">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Time"
+                        android:id="@+id/activity_restaurantrequest_label_time"
+                        android:textColor="@color/colorPrimaryBlack" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:id="@+id/activity_restaurantrequest_btn_peoples"
+                    android:onClick="activity_restaurantrequest_btn_peoples_clicked">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Number of People:"
+                        android:id="@+id/activity_restaurantrequest_label_peoples"
+                        android:textColor="@color/colorPrimaryBlack" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/activity_restaurantrequest_txt_info"
+                        android:hint="Additional Information"
+                        android:textSize="@dimen/small_textsize"
+                        android:background="@android:color/transparent" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/activity_restaurantrequest_container_fragment"
+        android:visibility="gone">
+
+    </FrameLayout>
+
+</FrameLayout>

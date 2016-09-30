@@ -15,6 +15,7 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
@@ -22,9 +23,22 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.android.anton.testapp.R;
+import com.android.anton.testapp.classes.Restaurant;
 import com.android.anton.testapp.classes.UserInfo;
 import com.android.anton.testapp.fragments.RegistrationFragment;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import io.whirr.scaf.api.DataApi;
+
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -39,20 +53,25 @@ public class RestaurantRequestActivity extends Activity {
     private static final int    DATE_DIALOG_ID = 1;
     private static final int    TIME_DIALOG_ID = 2;
     private static final int    NUMBER_DIALOG_ID = 3;
+    private String appId;
 
     private TextView                lbl_date;
     private TextView                lbl_time;
     private TextView                lbl_peoples;
     private FrameLayout             container_fragment;
+    private EditText                txt_comment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_request);
 
+        appId = getIntent().getStringExtra("appId");
+
         lbl_date = (TextView) findViewById(R.id.activity_restaurantrequest_label_date);
         lbl_time = (TextView) findViewById(R.id.activity_restaurantrequest_label_time);
         lbl_peoples = (TextView) findViewById(R.id.activity_restaurantrequest_label_peoples);
+        txt_comment = (EditText) findViewById(R.id.activity_restaurantrequest_txt_info);
         container_fragment = (FrameLayout) findViewById(R.id.activity_restaurantrequest_container_fragment);
         container_fragment.setVisibility(View.GONE);
 
@@ -120,7 +139,56 @@ public class RestaurantRequestActivity extends Activity {
                     }).show();
 
         } else {
-            // TODO: 9/15/2016 : SendData
+            sendData();
+        }
+    }
+
+    public void sendData() {
+        UserInfo userInfo = new UserInfo(this);
+
+        String action = "makebooking";
+        String appid = appId;
+        String instanceid = "E658D06413D94F1EAF243D171BA4A26E";
+        String comment = txt_comment.getText().toString();
+        String appointmentDate = lbl_date.getText().toString() + "," + lbl_time.getText().toString();
+        String telephone = userInfo.getTelephone();
+        String address = userInfo.getAddress1() + "," + userInfo.getAddress2() + "," + userInfo.getTown() + "," + userInfo.getPostcode();
+        int numberOfPeople = Integer.parseInt( (lbl_peoples.getText().toString().equals(""))? "0": lbl_peoples.getText().toString() );
+
+        OkHttpClient client = new OkHttpClient();
+
+        try {
+            MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("action", action);
+            jsonObject.put("instanceid", instanceid);
+            jsonObject.put("appid", appid);
+            jsonObject.put("comment", comment);
+            jsonObject.put("appointmentDate", appointmentDate);
+            jsonObject.put("telephone", telephone);
+            jsonObject.put("addresss", address);
+            jsonObject.put("numberofpeople", numberOfPeople);
+
+            RequestBody body = RequestBody.create(JSON, jsonObject.toString());
+            Request request = new Request.Builder()
+                    .url("https://api.appmc2.net/postdata.aspx")
+                    .post(body)
+                    .build();
+
+            client.newCall(request).enqueue(new Callback() {
+                @Override
+                public void onFailure(Request request, IOException e) {
+//                    Log.d(TAG, request.body().toString());
+                }
+
+                @Override
+                public void onResponse(final Response response) throws IOException {
+                    Log.d(TAG, response.body().toString());
+                }
+            });
+        } catch(Exception e) {
+
         }
     }
 

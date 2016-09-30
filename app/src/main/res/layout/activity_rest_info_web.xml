@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.anton.testapp.SubActivities.RestInfoWebActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimaryWhite">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/rest_info_location_back"
+            android:id="@+id/activity_rest_info_web_back"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="@color/colorPrimaryRed"
+            android:layout_marginLeft="10dp"
+            android:onClick="onBack"
+            android:textSize="@dimen/smiddle_textsize" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/colorPrimaryGrey"></LinearLayout>
+        android:layout_marginLeft="10dp" />
+    </FrameLayout>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/activity_rest_info_web_webView" />
+
+</LinearLayout>

@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.android.anton.testapp.classes.CustomAdapter;
 import com.android.anton.testapp.classes.GPSTracker;
-import com.android.anton.testapp.classes.MySharedPreference;
+import com.android.anton.testapp.classes.SFSharedPreference;
 import com.android.anton.testapp.fragments.RestaurantsFragment;
 
 public class HomeActivity extends Activity {
@@ -51,7 +51,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                if (MySharedPreference.newInstance(getActivity()).getSelectedLocation() == null) {
+                if (SFSharedPreference.newInstance(getActivity()).getSelectedLocation() == null) {
                     new AlertDialog.Builder(getActivity())
                             .setTitle("")
                             .setMessage("Please choose a location first!")

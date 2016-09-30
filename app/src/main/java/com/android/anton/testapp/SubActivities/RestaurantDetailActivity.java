@@ -3,23 +3,28 @@ package com.android.anton.testapp.SubActivities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.android.anton.testapp.R;
+import com.android.anton.testapp.classes.Restaurant;
 import com.squareup.picasso.Picasso;
 
 public class RestaurantDetailActivity extends AppCompatActivity {
 
-    private static final String TAG = "RestaurantDe";
+    private static final String TAG = "RestaurantDetail";
     private String category;
+    private String appId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_detail);
+
+        appId = getIntent().getStringExtra("appId");
 
         String name = getIntent().getStringExtra("name");
         String distance = getIntent().getStringExtra("distance");
@@ -51,12 +56,37 @@ public class RestaurantDetailActivity extends AppCompatActivity {
         /*------------------------------------------------------------------------------------*/
     }
 
-    public void activity_restaurantdetail_btn_back_clicked(View v) {
+    public void onBack(View v) {
         finish();
     }
 
-    public void activity_restaurant_detail_btn_bookable_clicked(View v) {
+    public void onViewMenu(View v) {
+        Intent intent = new Intent(this, RestMenuActivity.class);
+        intent.putExtra("appId", appId);
+        startActivity(intent);
+    }
+
+    public void onInfo(View v) {
+        Intent intent = new Intent(this, RestaurantInfoActivity.class);
+        intent.putExtra("appId", appId);
+        startActivity(intent);
+    }
+
+    public void onBookTable(View v) {
         Intent intent = new Intent(this, RestaurantRequestActivity.class);
+        intent.putExtra("appId", appId);
+        startActivity(intent);
+    }
+
+    public void onRate(View v) {
+        Intent intent = new Intent(this, RestaurantRateActivity.class);
+        intent.putExtra("appId", appId);
+        startActivity(intent);
+    }
+
+    public void onSpecials(View v) {
+        Intent intent = new Intent(this, RestaurantSpecialsActivity.class);
+        intent.putExtra("appId", appId);
         startActivity(intent);
     }
 

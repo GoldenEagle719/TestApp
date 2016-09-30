@@ -3,20 +3,19 @@ package com.android.anton.testapp.classes;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.renderscript.Double2;
 
 /**
  * Created by Administrator on 8/29/2016.
  */
-public class MySharedPreference {
+public class SFSharedPreference {
     private Activity mContext;
 
-    public MySharedPreference(Activity context) {
+    public SFSharedPreference(Activity context) {
         mContext = context;
     }
 
-    public static MySharedPreference newInstance(Activity context) {
-        return new MySharedPreference(context);
+    public static SFSharedPreference newInstance(Activity context) {
+        return new SFSharedPreference(context);
     }
 
     public LocationForCity getSelectedLocation() {

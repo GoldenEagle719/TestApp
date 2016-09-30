@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.android.anton.testapp.fragments.RegistrationFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryWhite">
 
     <FrameLayout
         android:orientation="horizontal"
@@ -14,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="&lt; Profile"
+            android:text="&lt;Back"
             android:id="@+id/registrationf_btn_back"
             android:textColor="@color/colorPrimaryRed"
             android:layout_margin="10dp"
@@ -43,128 +44,137 @@
             android:textSize="@dimen/smiddle_textsize" />
     </FrameLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal">
+        android:id="@+id/scrollView"
+        android:layout_weight="1">
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:layout_weight="1.6">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageViewrf"
-                android:src="@drawable/large_logo" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Please provide your details"
-            android:id="@+id/textView4rf"
-            android:textColor="@color/colorPrimaryBlack"
-            android:textSize="@dimen/small_textsize" />
-
-        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollView" >
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:layout_weight="1">
+                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal">
 
-                <EditText
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/registrationf_edit_name"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:hint="Name"
-                    android:textSize="@dimen/smiddle_textsize" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:ems="10"
-                    android:id="@+id/registrationf_edit_email"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:hint="Email"
-                    android:textSize="@dimen/smiddle_textsize" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPostalAddress"
-                    android:ems="10"
-                    android:id="@+id/registrationf_edit_address1"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:hint="Address1"
-                    android:textSize="@dimen/smiddle_textsize" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPostalAddress"
-                    android:ems="10"
-                    android:id="@+id/registrationf_edit_address2"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:hint="Address2"
-                    android:textSize="@dimen/smiddle_textsize" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPostalAddress"
-                    android:ems="10"
-                    android:id="@+id/registrationf_edit_town"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:hint="Town"
-                    android:textSize="@dimen/smiddle_textsize" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPostalAddress"
-                    android:ems="10"
-                    android:id="@+id/registrationf_edit_postcode"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:hint="Postcode"
-                    android:textSize="@dimen/smiddle_textsize" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:ems="10"
-                    android:id="@+id/registrationf_edit_telephone"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:hint="Telephone"
-                    android:textSize="@dimen/smiddle_textsize" />
-
+                    android:id="@+id/imageViewrf"
+                    android:src="@drawable/large_logo" />
             </LinearLayout>
-        </ScrollView>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Please provide your details"
+                android:id="@+id/textView4rf"
+                android:textColor="@color/colorPrimaryBlack"
+                android:textSize="@dimen/small_textsize"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/registrationf_edit_name"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Name"
+                android:textSize="@dimen/small_textsize"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/registrationf_edit_email"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="Email"
+                android:textSize="@dimen/small_textsize"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/transparent" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:ems="10"
+                android:id="@+id/registrationf_edit_address1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Address1"
+                android:textSize="@dimen/small_textsize"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:ems="10"
+                android:id="@+id/registrationf_edit_address2"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="Address2"
+                android:textSize="@dimen/small_textsize"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:ems="10"
+                android:id="@+id/registrationf_edit_town"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Town"
+                android:textSize="@dimen/small_textsize"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:ems="10"
+                android:id="@+id/registrationf_edit_postcode"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Postcode"
+                android:textSize="@dimen/small_textsize"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:ems="10"
+                android:id="@+id/registrationf_edit_telephone"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Telephone"
+                android:textSize="@dimen/small_textsize"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="15dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

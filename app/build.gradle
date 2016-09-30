@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         multiDexEnabled true
-        applicationId "com.android.anton.tablayoutsample"
+        applicationId "com.android.anton.testapp"
         minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
@@ -35,4 +35,7 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.google.android.gms:play-services:9.4.0'
+    compile project(':whirrscaf')
+
+
 }

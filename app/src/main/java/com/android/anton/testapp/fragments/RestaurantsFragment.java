@@ -1,37 +1,24 @@
 package com.android.anton.testapp.fragments;
 
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.anton.testapp.HomeActivity;
-import com.android.anton.testapp.MainActivity;
 import com.android.anton.testapp.R;
-import com.android.anton.testapp.RegistrationActivity;
 import com.android.anton.testapp.SubActivities.RestaurantDetailActivity;
-import com.android.anton.testapp.classes.MySharedPreference;
-import com.android.anton.testapp.classes.NotificationConfigListAdapter;
+import com.android.anton.testapp.classes.SFSharedPreference;
 import com.android.anton.testapp.classes.Restaurant;
 import com.android.anton.testapp.classes.RestaurantsListAdapter;
-import com.android.anton.testapp.classes.UserInfo;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
@@ -44,8 +31,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class RestaurantsFragment extends Fragment implements View.OnClickListener{
     private static final String TAG = "RestaurantsF";
@@ -121,12 +106,14 @@ public class RestaurantsFragment extends Fragment implements View.OnClickListene
 //                .replace(R.id.home_fragment_container, restaurantDetailFragment, null)
 //                .addToBackStack(null)
 //                .commit();
+
         Intent intent = new Intent(this.getActivity(), RestaurantDetailActivity.class);
+        intent.putExtra("appId", restaurantArrayList.get(position).getAppId());
         intent.putExtra("name", restaurantArrayList.get(position).getName());
         intent.putExtra("distance", restaurantArrayList.get(position).getDistance());
         intent.putExtra("imageurl", restaurantArrayList.get(position).getImgURL());
         intent.putExtra("rating", restaurantArrayList.get(position).getRating());
-        intent.putExtra("category", category);
+        intent.putExtra("category", category);;
         getActivity().startActivity(intent);
 
     }
@@ -134,8 +121,8 @@ public class RestaurantsFragment extends Fragment implements View.OnClickListene
     public void searchVenues() {
         String action = "searchvenues";
         String instanceid = "E658D06413D94F1EAF243D171BA4A26E";
-        double lat = MySharedPreference.newInstance(getActivity()).getSelectedLocation().getLat();
-        double lng = MySharedPreference.newInstance(getActivity()).getSelectedLocation().getLng();
+        double lat = SFSharedPreference.newInstance(getActivity()).getSelectedLocation().getLat();
+        double lng = SFSharedPreference.newInstance(getActivity()).getSelectedLocation().getLng();
         String appid = "a72cb1dd-7767-41ca-a3c1-f07af763f469";
 
         OkHttpClient client = new OkHttpClient();
@@ -185,7 +172,7 @@ public class RestaurantsFragment extends Fragment implements View.OnClickListene
 
                             nameAry[i] = name;
 
-                            Restaurant restaurant = new Restaurant(name, distance, rating, imageurl);
+                            Restaurant restaurant = new Restaurant(appid, name, distance, rating, imageurl);
                             restaurantArrayList.add(restaurant);
                         }
 
